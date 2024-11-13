@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function App() {
   const [todoposts, setTodoPost]= useState([])
-
+axios.defaults.withCredentials = true;
  const Datafetching= async()=>{
     const response = await axios.get(process.env.BACKEND_LINK + "/api")
     setTodoPost(response?.data)
